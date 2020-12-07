@@ -1,5 +1,4 @@
 const express = require("express");
-//const cors = require("cors");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const passportLocal = require("passport-local").Strategy;
@@ -12,6 +11,7 @@ const {url} = require("./config/keys");
 const Post = require("./models/post");
 const Comment = require("./models/comment");
 const User = require("./models/user");
+const cors = require("cors");
 
 const app = express();
 
@@ -22,12 +22,12 @@ mongoose.connect( process.env.MONGODB_URI ||url, {useNewUrlParser: true, useUnif
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(
-//     cors({
-//             origin: "http://localhost:3000",
-//             credentials: true,
-//     })
-// );
+app.use(
+    cors({
+            origin: "https://zen-bell-44f625.netlify.app/",
+            credentials: true,
+    })
+);
 app.use(
     session({
             secret: "secretcode",

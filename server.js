@@ -24,7 +24,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
     cors({
-            origin: '*',  //"https://zen-bell-44f625.netlify.app/",
+            origin: ["https://zen-bell-44f625.netlify.app/","http://localhost:3000/"],
             credentials: true,
     })
 );

@@ -5,6 +5,7 @@ const passport = require("passport");
 const passportLocal = require("passport-local").Strategy;
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
+require("dotenv").config();
 const port = process.env.PORT || 5000;
 const mongoose = require("mongoose");
 const {url} = require("./config/keys");
@@ -14,7 +15,7 @@ const User = require("./models/user");
 
 const app = express();
 
-mongoose.connect( process.env.MONGO_URI ||url, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
+mongoose.connect( process.env.MONGODB_URI ||url, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
     .then(r => console.log("server started"))
     .catch(err => console.log("couldn't connect ", err));
 

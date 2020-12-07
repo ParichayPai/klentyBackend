@@ -15,6 +15,12 @@ const User = require("./models/user");
 
 const app = express();
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 mongoose.connect( process.env.MONGODB_URI ||url, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
     .then(r => console.log("server started"))
     .catch(err => console.log("couldn't connect ", err));

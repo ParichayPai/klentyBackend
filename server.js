@@ -5,6 +5,7 @@ const passport = require("passport");
 const passportLocal = require("passport-local").Strategy;
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
+require("dotenv").config();
 const port = process.env.PORT || 5000;
 const mongoose = require("mongoose");
 const {url} = require("./config/keys");

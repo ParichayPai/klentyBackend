@@ -57,6 +57,7 @@ module.exports = (app) => {
         });
     });
     app.get("/api/v1/user", (req, res) => {
+        console.log("getting user");
         res.send(req.user);
     });
     app.get('/api/v1/logout', function(req, res){

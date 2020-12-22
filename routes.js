@@ -17,15 +17,12 @@ module.exports = (app) => {
         (req, res, next) => {
             passport.authenticate("local", (err, user, next) => {
                 if (err) {
-                    console.log('1');
                     throw err;
                 }
                 if (!user) {
-                    console.log("2");
                     res.send("No User Exists");
                 }
                 else {
-                    console.log("3");
                     req.login(user, (err) => {
                         if (err){
                             console.log(err);

@@ -58,8 +58,9 @@ module.exports = (app) => {
         res.send(req.user);
     });
     app.get('/api/v1/logout', function(req, res){
-        req.logout();
-        res.redirect('/');
+//         req.logout();
+//         res.redirect('/');
+        req.session.destroy();
     });
 ////////////////////Passport Shit Done///////////////////////////////////
 

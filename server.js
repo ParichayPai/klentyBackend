@@ -30,7 +30,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
     cors({
-            origin: "https://parichay-fs-client.herokuapp.com/", //["https://klenty-front.herokuapp.com/","http://localhost:3000"],
+            origin: "https://parichay-fs-client.herokuapp.com", //["https://klenty-front.herokuapp.com/","http://localhost:3000"],
             credentials: true,
     })
 );
